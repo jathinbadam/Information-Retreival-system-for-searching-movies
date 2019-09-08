@@ -1,7 +1,7 @@
 # Search-Movies
 Search Engine for Movies 
 ## Problem Statement
-Many of us face problem in remembering the names of the movies, but we always remember the basic plot and cast names.
+Many of us face problem in remembering the names of the movies, but we always remember the basic plot and cast.
 
 ### Solution?
 This search engine helps you find the name of the movie and also recommends movies that have similar plot and genre by using concepts of**Information Retrival**.
