@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module IR3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>IR3</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/jathin/Desktop/IR_Project/IR3.py">/home/jathin/Desktop/IR_Project/IR3.py</a></font></td></tr></table>
+    <p><tt>#Importing&nbsp;necessary&nbsp;modules</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="scipy.spatial.distance.html">scipy.spatial.distance</a><br>
+<a href="nltk.html">nltk</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+<a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="pandas.html">pandas</a><br>
+<a href="re.html">re</a><br>
+</td><td width="25%" valign=top><a href="gensim.models.word2vec.html">gensim.models.word2vec</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-build_corpus"><strong>build_corpus</strong></a>(data)</dt><dd><tt>This&nbsp;function&nbsp;Tokenizes&nbsp;all&nbsp;the&nbsp;words&nbsp;in&nbsp;a&nbsp;document's&nbsp;plot&nbsp;and&nbsp;stores&nbsp;them&nbsp;in&nbsp;a&nbsp;list,&nbsp;then&nbsp;it&nbsp;stores&nbsp;all&nbsp;the&nbsp;lists&nbsp;of&nbsp;individual&nbsp;plots&nbsp;into&nbsp;a&nbsp;corpus</tt></dd></dl>
+ <dl><dt><a name="-clean_dataframe"><strong>clean_dataframe</strong></a>(data)</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;all&nbsp;the&nbsp;documents&nbsp;that&nbsp;doesnot&nbsp;have&nbsp;plots&nbsp;and&nbsp;applies&nbsp;the&nbsp;clean_sentence&nbsp;function&nbsp;to&nbsp;the&nbsp;documents&nbsp;that&nbsp;have&nbsp;plots</tt></dd></dl>
+ <dl><dt><a name="-clean_sentence"><strong>clean_sentence</strong></a>(val)</dt><dd><tt>This&nbsp;function&nbsp;removes&nbsp;all&nbsp;the&nbsp;characters&nbsp;that&nbsp;are&nbsp;not&nbsp;letters&nbsp;or&nbsp;numbers&nbsp;,&nbsp;converts&nbsp;the&nbsp;sentence&nbsp;to&nbsp;lowercase&nbsp;and&nbsp;removes&nbsp;the&nbsp;stopwords&nbsp;occuring&nbsp;in&nbsp;the&nbsp;document</tt></dd></dl>
+ <dl><dt><a name="-documentvec"><strong>documentvec</strong></a>(word2vec_model, plotwords)</dt><dd><tt>This&nbsp;function&nbsp;Creates&nbsp;a&nbsp;document&nbsp;vector&nbsp;by&nbsp;taking&nbsp;the&nbsp;mean&nbsp;of&nbsp;word&nbsp;vectors&nbsp;of&nbsp;the&nbsp;words&nbsp;in&nbsp;the&nbsp;document</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__warningregistry__</strong> = {'version': 34, ('<font color="#c040c0">\n</font>A value is trying to be set on a copy of a slic...cs/stable/indexing.html#indexing-view-versus-copy', &lt;class 'pandas.core.common.SettingWithCopyWarning'&gt;, 26): True}<br>
+<strong>cleaned_data</strong> =        Release Year                        ...  ... i̇stanbul many year...
+
+[33464 rows x 8 columns]<br>
+<strong>corpus</strong> = [['alice', 'follows', 'large', 'white', 'rabbit', 'rabbithole', 'finds', 'tiny', 'door', 'finds', 'bottle', 'labeled', 'drink', 'shrinks', 'enough', 'pass', 'door', 'eats', 'something', 'labeled', ...], ['boones', 'daughter', 'befriends', 'indian', 'maiden', 'boone', 'companion', 'start', 'hunting', 'expedition', 'away', 'boones', 'cabin', 'attacked', 'indians', 'set', 'fire', 'abduct', 'boones', 'daughter', ...], ['heading', 'baseball', 'game', 'nearby', 'ballpark', 'sports', 'fan', 'mr', 'brown', 'drinks', 'several', 'highball', 'cocktails', 'arrives', 'ballpark', 'watch', 'game', 'become', 'inebriated', 'game', ...], ['plot', 'black', 'woman', 'going', 'dentist', 'toothache', 'given', 'laughing', 'gas', 'way', 'walking', 'home', 'situations', 'cant', 'stop', 'laughing', 'everyone', 'meets', 'catches', 'laughter', ...], ['beautiful', 'summer', 'day', 'father', 'mother', 'take', 'daughter', 'dollie', 'outing', 'river', 'mother', 'refuses', 'buy', 'gypsys', 'wares', 'gypsy', 'tries', 'rob', 'mother', 'father', ...], ['thug', 'accosts', 'girl', 'leaves', 'workplace', 'man', 'rescues', 'thug', 'vows', 'revenge', 'help', 'two', 'friends', 'attacks', 'girl', 'rescuer', 'theyre', 'going', 'walk', 'time', ...], ['young', 'couple', 'decides', 'elope', 'caught', 'midst', 'romantic', 'moment', 'womans', 'angry', 'father', 'make', 'plans', 'leave', 'thief', 'discovers', 'plans', 'hides', 'trunk', 'waits', ...], ['white', 'girl', 'florence', 'lawrence', 'rejects', 'proposal', 'indian', 'brave', 'charles', 'inslee', 'early', 'onereel', 'western', 'melodrama', 'despite', 'rejection', 'indian', 'still', 'comes', 'girls', ...], ['prints', 'first', 'american', 'film', 'adaptation', 'christmas', 'carol', 'known', 'exist1', 'moving', 'picture', 'world', 'magazine', 'provided', 'scenebyscene', 'description', 'films', 'release2', 'scrooge', 'goes', ...], ['film', 'opens', 'town', 'mexican', 'border', 'poker', 'game', 'going', 'local', 'saloon', 'one', 'players', 'cheats', 'shot', 'dead', 'another', 'players', 'mexican', 'named', 'pedro', ...], ['rejected', 'admirer', 'sets', 'trap', 'kill', 'sweetheart', 'fiance', 'married', 'commit', 'suicide', 'passes', 'away', 'leaves', 'confession', 'fortunately', 'confession', 'found', 'time', 'police', 'man', ...], ['john', 'wharton', 'husband', 'true', 'trusting', 'wife', 'father', 'eightyearold', 'girl', 'association', 'rakish', 'companions', 'becomes', 'addicted', 'drink', 'habit', 'demon', 'rum', 'fastened', 'tentacles', ...], ['story', 'told', 'moving', 'picture', 'world', 'reads<font color="#c040c0">\r\n</font>'], ['mary', 'pickford', 'plays', 'priscilla', 'unemployed', 'maid', 'finds', 'work', 'farm', 'meets', 'nogood', 'peddler', 'starts', 'flirting', 'makes', 'fall', 'love', 'runs', 'gambling', 'bill', ...], ['day', 'christmas', 'ebenezer', 'scrooge', 'refuses', 'contribute', 'charity', 'relief', 'committee', 'rudely', 'rejects', 'nephew', 'fred', 'visits', 'scrooge', 'office', 'scrooge', 'returns', 'home', 'sees', ...], ['described', 'liberal', 'adaptation', 'mrs', 'shelleys', 'famous', 'story', 'plot', 'description', 'edison', 'kinetogram', 'was3'], ['american', 'civil', 'war', 'young', 'soldier', 'loses', 'nerve', 'battle', 'runs', 'away', 'home', 'hide', 'sister', 'puts', 'uniform', 'takes', 'brothers', 'place', 'battle', 'killed', ...], ['irish', 'boy', 'olcott', 'emigrates', 'america', 'escape', 'desperate', 'poverty', 'ireland', 'finding', 'work', 'construction', 'finds', 'success', 'politics', 'returns', 'ireland', 'receiving', 'letter', 'sweetheart', ...], ['though', 'film', 'presumed', 'lost', 'synopsis', 'survives', 'moving', 'picture', 'world', 'october', '15', '1910', 'states', 'captain', 'john', 'smith', 'comes', 'america', 'head', 'band', ...], ['ramona', 'chronicles', 'romance', 'ramona', 'mary', 'pickford', 'spanish', 'orphan', 'prestigious', 'moreno', 'family', 'alessandro', 'henry', 'b', 'walthall', 'indian', 'appears', 'familys', 'ranch', 'one', ...], ...]<br>
+<strong>data_movies</strong> =        Release Year                        ...  ...urns to İstanbul aft...
+
+[34886 rows x 8 columns]<br>
+<strong>docvecs</strong> = [array([-0.7176995 ,  0.01530735,  0.04931505, -1..., -0.53131473, -0.7449481 ],
+      dtype=float32), array([ 0.26564607, -0.84201956,  0.55805314,  0..., -0.02465519, -0.28040272],
+      dtype=float32), array([-0.3413644 , -0.49961835, -0.02971308,  0..., -0.04735279, -0.97665143],
+      dtype=float32), array([-0.41940215,  0.0667254 , -0.41146114, -0..., -0.4854538 , -0.6226309 ],
+      dtype=float32), array([ 0.61378384, -0.83297086,  0.29769677,  0..., -0.52728367, -0.01774832],
+      dtype=float32), array([-0.8143599 , -0.19458932,  0.56285167, -0..., -0.47498053, -0.6702927 ],
+      dtype=float32), array([-0.87520987, -0.9148605 , -0.19768305, -0..., -1.3751802 , -0.39067018],
+      dtype=float32), array([ 0.88866955,  0.39591038,  0.08468044,  0..., -0.16200529,  0.39848658],
+      dtype=float32), array([-0.14087999,  0.41109675,  0.1669332 , -0..., -0.16203602, -0.09211162],
+      dtype=float32), array([-0.40369943, -1.0925047 ,  0.3562926 ,  0...,  0.6064513 , -1.1183226 ],
+      dtype=float32), array([-1.2703158 , -0.7071453 , -0.4822108 , -0..., -1.3341856 ,  0.01292251],
+      dtype=float32), array([-1.78833067e-01, -1.87075824e-01,  7.4253...65241e-01,  9.03512314e-02],
+      dtype=float32), array([ 0.380103  ,  0.7168151 , -0.4884097 , -1...,  0.6774313 ,  0.8235755 ],
+      dtype=float32), array([ 3.14933538e-01, -1.82681009e-01, -3.9774...28704e+00, -1.13680489e-01],
+      dtype=float32), array([-0.64936495,  0.5107145 ,  0.35723153, -0..., -0.41044736,  0.1938513 ],
+      dtype=float32), array([ 0.10668214,  1.1220963 ,  0.11185829,  0...,  0.2606992 ,  0.10451882],
+      dtype=float32), array([ 0.21760447, -0.41869244,  0.4804545 , -0..., -0.07439248,  0.67438376],
+      dtype=float32), array([ 0.21916687, -0.82414675,  0.02053612,  0..., -0.4435443 ,  0.6989269 ],
+      dtype=float32), array([ 0.5224027 , -0.1585626 ,  0.46682882,  0..., -0.74063754,  0.27062923],
+      dtype=float32), array([ 3.92212510e-01, -2.33309135e-01,  4.8296...49536e-01,  4.16026056e-01],
+      dtype=float32), ...]<br>
+<strong>eng_stopwords</strong> = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've", "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', ...]<br>
+<strong>final_results</strong> = array([ 0.20409946, -0.10539004,  0.19743706, ...,  0.58677703,
+        0.42669678,  0.5002026 ])<br>
+<strong>i</strong> = 33463<br>
+<strong>mod_query</strong> = 'roshan kalrasaif ali khans passion cooking ever ...rt mobile kitchen learning life lessons along way'<br>
+<strong>model</strong> = &lt;gensim.models.word2vec.Word2Vec object&gt;<br>
+<strong>p</strong> = array([-0.00490052, -0.28790307,  0.25203687, -0..., -0.49473867,  0.22688596],
+      dtype=float32)<br>
+<strong>query</strong> = 'Roshan Kalra(Saif Ali Khan)’s passion has been c... kitchen, and learning life lessons along the way'<br>
+<strong>query_wordlist</strong> = ['roshan', 'kalrasaif', 'ali', 'khans', 'passion', 'cooking', 'ever', 'since', 'young', 'losing', 'job', 'chef', 'decides', 'start', 'mobile', 'kitchen', 'learning', 'life', 'lessons', 'along', ...]<br>
+<strong>result</strong> = [0.20409946143627167, -0.1053900420665741, 0.19743706285953522, 0.22273218631744385, 0.20676448941230774, 0.18989072740077972, 0.33433979749679565, 0.27714893221855164, 0.39269328117370605, -0.10103624314069748, 0.07057477533817291, 0.5482677817344666, 0.18778905272483826, 0.5310475826263428, 0.32727131247520447, -0.10166904330253601, 0.19050055742263794, 0.42219454050064087, 0.028183678165078163, 0.34233641624450684, ...]<br>
+<strong>stopwords</strong> = &lt;WordListCorpusReader in '/home/jathin/nltk_data/corpora/stopwords'&gt;<br>
+<strong>top_results</strong> = array([26329, 11968, 31470, 26061, 15421, 10285, 14623, 27570, 33118,
+       30420])</td></tr></table>
+</body></html>
